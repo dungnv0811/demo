@@ -1,11 +1,11 @@
-package com.bamossza.project.repository;
+package com.dvnguyen.project.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bamossza.project.entities.Car;
+import com.dvnguyen.project.entities.Car;
 
 @Transactional(readOnly = true)
 public interface CarRepository extends JpaRepository<Car, Integer> {
@@ -17,7 +17,7 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 	List<Car> findAll();
 	
 	@Transactional
-	<S extends Car> S save(Car car);
+	Car save(Car car);
 	
 	void delete(Car car);
 }

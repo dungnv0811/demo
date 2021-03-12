@@ -1,4 +1,4 @@
-package com.bamossza.project.entities;
+package com.dvnguyen.project.entities;
 
 import java.io.Serializable;
 

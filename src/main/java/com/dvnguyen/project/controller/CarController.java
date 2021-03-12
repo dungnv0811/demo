@@ -1,8 +1,10 @@
-package com.bamossza.project.controller;
+package com.dvnguyen.project.controller;
 
 import java.util.List;
 import java.util.Map;
 
+import com.dvnguyen.project.entities.Car;
+import com.dvnguyen.project.service.CarService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.bamossza.project.entities.Car;
-import com.bamossza.project.service.CarService;
 
 @RestController
 @RequestMapping(value = "/api/cars")
@@ -28,6 +27,8 @@ public class CarController {
 	@Autowired
     public CarController(CarService carService) {
         this.carService = carService;
+        Car car = new Car("Mercedes", "C300", "255", "5");
+        carService.add(car);
     }
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)

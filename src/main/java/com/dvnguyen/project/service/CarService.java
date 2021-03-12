@@ -1,4 +1,4 @@
-package com.bamossza.project.service;
+package com.dvnguyen.project.service;
 
 import java.util.List;
 import java.util.Map;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.bamossza.project.dao.CarDao;
-import com.bamossza.project.entities.Car;
+import com.dvnguyen.project.dao.CarDao;
+import com.dvnguyen.project.entities.Car;
 
 @Service
 @Transactional

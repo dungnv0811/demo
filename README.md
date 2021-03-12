@@ -28,16 +28,16 @@ DELETE 	/api/cars/{id}		Delete car by id
 ...
 2561-03-28 11:16:07 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1c72da34: startup date [Wed Mar 28 11:16:02 ICT 2018]; root of context hierarchy
-2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.bamossza.project.controller.CarController.update(int,com.bamossza.project.entities.Car)
-2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.bamossza.project.controller.CarController.delete(int)
-2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.bamossza.project.controller.CarController.create(com.bamossza.project.entities.Car)
-2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bamossza.project.entities.Car> com.bamossza.project.controller.CarController.getById(int)
-2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<java.util.Map<java.lang.String, java.lang.Object>>> com.bamossza.project.controller.CarController.getAll()
+2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.dvnguyen.project.controller.CarController.update(int,com.dvnguyen.project.entities.Car)
+2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.dvnguyen.project.controller.CarController.delete(int)
+2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.dvnguyen.project.controller.CarController.create(com.dvnguyen.project.entities.Car)
+2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.dvnguyen.project.entities.Car> com.dvnguyen.project.controller.CarController.getById(int)
+2561-03-28 11:16:08 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/cars],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<java.util.Map<java.lang.String, java.lang.Object>>> com.dvnguyen.project.controller.CarController.getAll()
 
 ```
 
 ##### After run auto create database:
-![Image of runtest](https://www.bamossza.com/static/images/upload/20180328120845b4180m4785z8858.JPG)
+![Image of runtest](https://www.dvnguyen.com/static/images/upload/20180328120845b4180m4785z8858.JPG)
 
 ##### CREATE:
 ```
@@ -49,20 +49,20 @@ POST /api/cars
     "carEngine": "2000"
 }
 ```
-![Image of runtest](https://www.bamossza.com/static/images/upload/20180328115352b3920m8718z70.JPG)
+![Image of runtest](https://www.dvnguyen.com/static/images/upload/20180328115352b3920m8718z70.JPG)
 
 ##### GET ALL:
 ```
 GET /api/cars
 ```
-![Image of runtest](https://www.bamossza.com/static/images/upload/20180328115929b866m8931z4900.JPG)
+![Image of runtest](https://www.dvnguyen.com/static/images/upload/20180328115929b866m8931z4900.JPG)
 
 
 ##### GET BY ID:
 ```
 GET /api/cars/1
 ```
-![Image of runtest](https://www.bamossza.com/static/images/upload/20180328120517b7695m503z4842.JPG)
+![Image of runtest](https://www.dvnguyen.com/static/images/upload/20180328120517b7695m503z4842.JPG)
 
 ##### UPDATE:
 ```
@@ -74,19 +74,19 @@ PUT /api/cars/1
     "carEngine": "1600"
 }
 ```
-![Image of runtest](https://www.bamossza.com/static/images/upload/20180328120424b3927m2155z3938.JPG)
+![Image of runtest](https://www.dvnguyen.com/static/images/upload/20180328120424b3927m2155z3938.JPG)
 
 
 ##### DELETE:
 ```
 DELETE /api/cars/1
 ```
-![Image of runtest](https://www.bamossza.com/static/images/upload/20180328120616b6722m2141z8062.JPG)
+![Image of runtest](https://www.dvnguyen.com/static/images/upload/20180328120616b6722m2141z8062.JPG)
 
 # 
 
-[Website](https://bamossza.com)
+[Website](https://dvnguyen.com)
 
-[Medium Blog](https://medium.com/@bamossza)
+[Medium Blog](https://medium.com/@dvnguyen)
 
-By. Panusit Khuenkham (bamossza)
+By. Panusit Khuenkham (dvnguyen)

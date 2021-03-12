@@ -1,4 +1,4 @@
-package com.bamossza.project.impl;
+package com.dvnguyen.project.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.bamossza.project.dao.CarDao;
-import com.bamossza.project.entities.Car;
-import com.bamossza.project.repository.CarRepository;
+import com.dvnguyen.project.dao.CarDao;
+import com.dvnguyen.project.entities.Car;
+import com.dvnguyen.project.repository.CarRepository;
 
 @Repository
 public class CarDaoImpl implements CarDao {
@@ -70,11 +70,11 @@ public class CarDaoImpl implements CarDao {
     @Override
     public List<Map<String, Object>> findAll() {
     	try {
-    		List<Map<String, Object>> list = new ArrayList<>();
-        	Map<String, Object> map = new HashMap<>();
+    		List<Map<String, Object>> list = new ArrayList();
+        	Map<String, Object> map = new HashMap();
         	List<Car> result = carRepository.findAll();
             for (Car car : result) {
-            	map = new HashMap<>();
+            	map = new HashMap();
             	map.put(car.getCarId().toString(), car);
             	list.add(map);
             }
