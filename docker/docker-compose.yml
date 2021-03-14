@@ -1,0 +1,52 @@
+version: "2"
+
+#NETWORK
+networks:
+  my-network:
+    driver: bridge
+
+#VOLUME
+volumes:
+  # name of volume
+  dir-site:
+    driver_opts:
+      # path of host's directory
+      device: nfs/
+      # set driver specific options
+      o: bind
+#SERVICE:
+services:
+  # container java
+  my-java:
+    container_name: java-product
+    build:
+      dockerfile: Dockerfile
+      context: .
+    hostname: java
+    restart: always
+    depends_on:
+      - my-mysql
+    environment:
+      - MYSQL_HOST=mysql
+    networks:
+      - my-network
+    volumes:
+      - dir-site:/home/code
+    ports:
+      - "8888:8080"
+  my-mysql:
+    container_name: mysql-product
+    image: "mysql:5.7"
+    hostname: mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=car
+      - MYSQL_USER=car
+      - MYSQL_PASSWORD=devekis01
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - my-network
+    volumes:
+      - dir-site:/var/lib/mysql
+    ports:
+      - "3306:3306"

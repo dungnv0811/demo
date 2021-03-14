@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.dvnguyen.project.entities.Car;
 import com.dvnguyen.project.service.CarService;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,6 @@ public class CarController {
 	@Autowired
     public CarController(CarService carService) {
         this.carService = carService;
-        Car car = new Car("Mercedes", "C300", "255", "5");
-        carService.add(car);
     }
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
@@ -53,6 +52,22 @@ public class CarController {
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (Exception e) {
         	logger.error(e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @RequestMapping(value = "dummy", method = RequestMethod.GET)
+    public ResponseEntity<Void> dummy() {
+        Car car = new Car(RandomStringUtils.random(10, true, false), RandomStringUtils.random(4, true, true), "255", "5");
+        try {
+            logger.info(car.getCarBrand());
+            logger.info(car.getCarEngine());
+            logger.info(car.getCarModel());
+            logger.info(car.getHorsepower());
+            carService.add(car);
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
